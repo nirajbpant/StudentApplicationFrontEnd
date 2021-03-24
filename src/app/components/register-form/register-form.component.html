@@ -1,0 +1,35 @@
+<div class="medium-list">
+    <h4 style="padding-left: 10px;">Register</h4>
+    <div class="list-viewer-wrapper">
+        <form [formGroup]="registerForm">
+            <div class="form-container">
+                <mat-form-field class="id">
+                    <input id="id"
+                    matInput
+                    formControlName="id"
+                    placeholder="Enter id"/>
+                </mat-form-field>
+                <mat-form-field class="assistiveText">
+                    <input id="username"
+                    matInput
+                    formControlName="username"
+                    placeholder="Enter your username"/>
+                </mat-form-field>
+                <mat-form-field class="assistiveText">
+                    <input id="password"
+                    matInput
+                    formControlName="password"
+                    placeholder="Enter your password"/>
+                </mat-form-field>
+                <mat-form-field class="assistiveText">
+                    <input id="role"
+                    matInput
+                    formControlName="role"
+                    placeholder="Enter your role"/>
+                </mat-form-field>
+                <div class="divider"></div>
+                <button mat-button type="submit" class="loginBtn">Register</button>
+            </div>
+        </form>
+    </div>
+</div>

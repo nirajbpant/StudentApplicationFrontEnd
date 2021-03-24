@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { LoginComponentComponent } from './components/login-component/login-component.component';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Library-Front';
+    modalRef: BsModalRef;
+
+
+  constructor(private modalService: BsModalService){}
+
+  openModal(){
+    this.modalRef = this.modalService.show(LoginComponentComponent);
+  }
 }

@@ -1,0 +1,59 @@
+.spacer {
+    flex-grow: 1;
+}
+
+
+.medium-list {
+    margin: auto;
+    width: 600px;
+    padding: 10px;
+    
+  }
+     
+  .list-viewer-wrapper {
+    border: 1px solid rgba(0, 0, 0, .03);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12);
+    margin: 4px;
+  }
+  
+  .list-header-title {
+    color: rgba(0, 0, 0, .54);
+    background: rgba(0, 0, 0, .03);
+    padding: 8px 20px;
+    font-weight: bold;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+ 
+  .divider {
+    margin-top: 40px !important; 
+  }
+  .divider_buttons{
+    margin-top: 15px !important; 
+  }
+  .loginBtn{
+    background-color: #9579d3;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+  .registerBtn{
+    background-color: rgb(2, 218, 2);
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+      font-weight: bold;
+  }
+  .assistiveText{
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+
+  }
+  .h4{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+}
