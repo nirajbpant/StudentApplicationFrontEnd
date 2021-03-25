@@ -15,7 +15,10 @@ import { LoginComponentComponent } from './components/login-component/login-comp
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { RegisterComponentComponent } from './components/register-component/register-component.component';
-
+import { FormsModule } from "@angular/forms";
+import { RegistrationService } from './services/registration.service';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { LoginSuccessComponent } from './components/login-success/login-success.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,8 @@ import { RegisterComponentComponent } from './components/register-component/regi
     LoginFormComponent,
     RegisterFormComponent,
     RegisterComponentComponent,
+    AdminPanelComponent,
+    LoginSuccessComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,9 +39,10 @@ import { RegisterComponentComponent } from './components/register-component/regi
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
-  providers: [BookService],
+  providers: [BookService, RegistrationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

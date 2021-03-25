@@ -3,35 +3,49 @@ import { Users } from 'src/app/common/users';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { RegisterComponentComponent } from '../register-component/register-component.component';
+import { NgForm } from "@angular/forms";
+import { RegistrationService } from 'src/app/services/registration.service';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
-  user: Users= new Users();
+  
+  user= new Users();
   modalRef: BsModalRef;
   loginForm: FormGroup;
-  isShow: false;
-
-  constructor(private formBuilder: FormBuilder,private modalService: BsModalService) { }
+  show: boolean = true;
+  errorMsg= '';
+  constructor(private modalService: BsModalService, 
+    private registrationService: RegistrationService,
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.loginForm= this.formBuilder.group({
-      'username': [this.user.username,[
-        Validators.required
-      ] 
-      ],
-      'password': [this.user.password,[
-        Validators.required,
-        Validators.minLength(4),
-        Validators.maxLength(30)
-      ]]
-    });
   }
 
   openModal(){
     this.modalRef = this.modalService.show(RegisterComponentComponent);
+    this.toggleShow();
+  }
+
+  toggleShow(){
+    this.show =false;
+  }
+
+  loginUser(){
+      this.registrationService.loginUserFromRemote(this.user).subscribe(
+        data => {
+          this.router.navigate(['/loginsucess']);
+          console.log("Response received")
+        },
+        error=> {
+          console.log("Exception occured");
+          this.errorMsg= "Bad Credentials. Please enter valid credentials";
+        }
+      );
   }
 
 }

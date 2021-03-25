@@ -1,35 +1,23 @@
 <div class="medium-list">
-    <h4 style="padding-left: 10px;">Register</h4>
     <div class="list-viewer-wrapper">
-        <form [formGroup]="registerForm">
-            <div class="form-container">
-                <mat-form-field class="id">
-                    <input id="id"
-                    matInput
-                    formControlName="id"
-                    placeholder="Enter id"/>
-                </mat-form-field>
-                <mat-form-field class="assistiveText">
-                    <input id="username"
-                    matInput
-                    formControlName="username"
-                    placeholder="Enter your username"/>
-                </mat-form-field>
-                <mat-form-field class="assistiveText">
-                    <input id="password"
-                    matInput
-                    formControlName="password"
-                    placeholder="Enter your password"/>
-                </mat-form-field>
-                <mat-form-field class="assistiveText">
-                    <input id="role"
-                    matInput
-                    formControlName="role"
-                    placeholder="Enter your role"/>
-                </mat-form-field>
-                <div class="divider"></div>
-                <button mat-button type="submit" class="loginBtn">Register</button>
+        <form #loginForm="ngForm" (ngSubmit)="registerUser()">
+            <small class="danger">{{errorMsg}}</small>
+            <div class="form-group">
+              <label for="email">Username:</label>
+              <input type="email" class="form-control" placeholder="Enter username" name="username" [(ngModel)]= "user.username">
             </div>
-        </form>
+            <div class="form-group">
+                <label for="email">Role:</label>
+                <input type="email" class="form-control" placeholder="Enter Role" name="role" [(ngModel)]= "user.role">
+              </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" placeholder="Enter password" name="password" [(ngModel)]= "user.password">
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" name="remember"> Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-info" class="btn btn-primary btn-lg">Register</button>
+          </form>
     </div>
 </div>
