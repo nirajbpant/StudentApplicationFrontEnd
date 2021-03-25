@@ -18,5 +18,18 @@ export class BookService {
     return this.httpClient.get<Library[]>(`${this.baseUrl}`);
   }
     
+  deleteBook(id: number){
+    return this.httpClient.delete(`${this.baseUrl}/${id}`,{responseType: 'text'});
+  }
+
+  createBook(libray: object): Observable<Object>{
+    return this.httpClient.post(`${this.baseUrl}`, libray);
+  }
+
+  updateBook(id: number, value:any): Observable<Object>{
+    return this.httpClient.put('http://localhost:8020/books/update/' +id, value);
+  }
+
+
   }
     

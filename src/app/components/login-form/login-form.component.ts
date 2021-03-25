@@ -7,6 +7,8 @@ import { NgForm } from "@angular/forms";
 import { RegistrationService } from 'src/app/services/registration.service';
 import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
+import { AdminPanelComponent } from '../admin-panel/admin-panel.component';
+
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -18,6 +20,7 @@ export class LoginFormComponent implements OnInit {
   modalRef: BsModalRef;
   loginForm: FormGroup;
   show: boolean = true;
+  afterLoginshow: boolean= true;
   errorMsg= '';
   constructor(private modalService: BsModalService, 
     private registrationService: RegistrationService,
@@ -38,8 +41,10 @@ export class LoginFormComponent implements OnInit {
   loginUser(){
       this.registrationService.loginUserFromRemote(this.user).subscribe(
         data => {
-          this.router.navigate(['/loginsucess']);
+          this.router.navigate(['loginsucess']);
           console.log("Response received")
+          this.afterLoginshow = false;
+      
         },
         error=> {
           console.log("Exception occured");
@@ -47,5 +52,7 @@ export class LoginFormComponent implements OnInit {
         }
       );
   }
-
+  openAdminModal(){
+    this.modalRef= this.modalService.show(AdminPanelComponent);
+  }
 }

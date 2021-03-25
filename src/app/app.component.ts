@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { LoginComponentComponent } from './components/login-component/login-component.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
 
 
 @Component({
@@ -16,6 +16,6 @@ export class AppComponent {
   constructor(private modalService: BsModalService){}
 
   openModal(){
-    this.modalRef = this.modalService.show(LoginComponentComponent);
+    this.modalRef = this.modalService.show(LoginFormComponent);
   }
 }
