@@ -19,6 +19,7 @@ import { FormsModule } from "@angular/forms";
 import { RegistrationService } from './services/registration.service';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { LoginSuccessComponent } from './components/login-success/login-success.component';
+import { UpdateBookComponent } from './components/update-book/update-book.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { LoginSuccessComponent } from './components/login-success/login-success.
     RegisterComponentComponent,
     AdminPanelComponent,
     LoginSuccessComponent,
+    UpdateBookComponent,
   ],
   imports: [
     BrowserModule,
