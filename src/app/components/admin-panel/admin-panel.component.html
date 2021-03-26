@@ -19,7 +19,7 @@
           <td>{{tempBook.bookName}}</td>
           <td>{{tempBook.count}}</td>
           <td>{{tempBook.imageURL}}</td>
-          <td><button class="btn btn-success"> Update</button></td>
+          <td><button class="btn btn-success" (click)="updateBook(tempBook.bookId)"> Update</button></td>
           <td><button class="btn btn-success" (click)="deleteBook(tempBook.bookId)">Delete</button></td>
         </tr>
       </tbody>

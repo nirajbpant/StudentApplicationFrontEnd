@@ -36,8 +36,8 @@ export class AdminPanelComponent implements OnInit {
     );
   }
 
-  updateData(id : number){
-   //this.router.navigate(['update'],id);
+  updateBook(bookId : number){
+   this.router.navigate(['update',bookId]);
   }
 
 }

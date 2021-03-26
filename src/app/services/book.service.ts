@@ -27,7 +27,11 @@ export class BookService {
   }
 
   updateBook(id: number, value:any): Observable<Object>{
-    return this.httpClient.put('http://localhost:8020/books/update/' +id, value);
+    return this.httpClient.put(`http://localhost:8020/books/update/${id}`, value);
+  }
+
+  getOneBook(id: number): Observable<any>{
+    return this.httpClient.get(`${this.baseUrl}/${id}`);
   }
 
 
