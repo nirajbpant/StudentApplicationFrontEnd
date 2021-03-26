@@ -20,6 +20,7 @@ import { RegistrationService } from './services/registration.service';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { LoginSuccessComponent } from './components/login-success/login-success.component';
 import { UpdateBookComponent } from './components/update-book/update-book.component';
+import { CreateBookComponent } from './components/create-book/create-book.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { UpdateBookComponent } from './components/update-book/update-book.compon
     AdminPanelComponent,
     LoginSuccessComponent,
     UpdateBookComponent,
+    CreateBookComponent,
   ],
   imports: [
     BrowserModule,

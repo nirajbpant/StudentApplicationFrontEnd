@@ -40,4 +40,7 @@ export class AdminPanelComponent implements OnInit {
    this.router.navigate(['update',bookId]);
   }
 
+  addBook(){
+    this.router.navigate(['createBook']);
+  }
 }
