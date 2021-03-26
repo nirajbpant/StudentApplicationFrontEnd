@@ -1,11 +1,12 @@
 <div *ngIf="afterLoginshow">
-<div class="card mb-3" style="width: 650px; height: 400px;" >
+<div class="card mb-3" style="width: 650px; height: 400px;">
   <div class="row g-0">
     <div class="col-md-8">
       <div class="card-body">
         <h4 class="card-title" style="padding-left: 10px;">Login</h4>
           <div *ngIf="show">
           <div class="medium-list">
+            <div class="loginContainer">
               <div class="list-viewer-wrapper">
                   <form #loginForm="ngForm" (ngSubmit)="loginUser()">
                       <small class="text-danger">{{errorMsg}}</small>
@@ -20,11 +21,14 @@
                       <div class="checkbox">
                         <label><input type="checkbox" name="remember"> Remember me</label>
                       </div>
-                      <button type="submit" class="btn btn-info" class="btn btn-primary btn-lg">Login</button>
+                      <div class="buttonClass">
+                      <button type="submit" class="loginBtn" >Login</button>
                       <div class="divider_buttons"></div>
-                      <button type="submit" class="btn btn-info" class="btn btn-primary btn-lg" (click)="openModal()">Register</button>
+                      <button type="submit" class="registerBtn" (click)="openModal()">Register</button>
+                      </div>
                     </form>
               </div>
+            </div>
           </div>
           </div>
           </div>

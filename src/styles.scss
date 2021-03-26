@@ -113,7 +113,8 @@ a,a:hover{
 
 .main-content{
     padding-top:116px;
-    min-height:100vh
+    min-height:100vh;
+    font-family: 'Times New Roman';
 }
 
 aside.menu-sidebar.d-none.d-lg-block.clr{
@@ -348,6 +349,7 @@ input.au-input.au-input-xl{
 
 .menu-sidebar .navbar-list .navbar-sub-list li a{
     padding:11.5px 0
+
 }
 
 .menu-sidebar-content{
@@ -359,7 +361,8 @@ input.au-input.au-input-xl{
 
 .navbar-sidebar{
     padding:35px;
-    padding-bottom:0
+    padding-bottom:0;
+    font-family: 'Times New Roman';
 }
 
 .navbar-sidebar .navbar-list li a{
@@ -825,7 +828,8 @@ footer ul li{
         background:#fff
     }
     .header-wrap .account-item>.content{
-        display:none
+        display:none;
+        font-family: 'Times New Roman';
     }
 }
 

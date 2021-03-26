@@ -3,6 +3,7 @@ import { Users } from 'src/app/common/users';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { NgForm } from "@angular/forms";
 import { RegistrationService } from 'src/app/services/registration.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-form',
@@ -12,7 +13,9 @@ import { RegistrationService } from 'src/app/services/registration.service';
 export class RegisterFormComponent implements OnInit {
   user= new Users();
   errorMsg="";
-  constructor(private formBuilder: FormBuilder, private registrationService: RegistrationService) { }
+  
+  constructor(private formBuilder: FormBuilder, private registrationService: RegistrationService
+    , private router: Router) { }
 
   ngOnInit(): void {
     
@@ -23,6 +26,7 @@ export class RegisterFormComponent implements OnInit {
       data=> {
         console.log("response received");
         this.errorMsg="Registration Succesful. Now you can login";
+        this.router.navigate(['/login']);
       },
       error=>{
         console.log("Exception occured");
